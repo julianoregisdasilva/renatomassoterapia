@@ -1,23 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion } from "motion/react";
 import {
   Hand,
   Activity,
-  Footprints,
   Droplets,
-  Armchair,
   MapPin,
   Phone,
   Instagram,
   Menu,
-  ImageIcon,
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import foto1 from "@/assets/foto1.jpg.asset.json";
 import foto2 from "@/assets/foto2.jpg.asset.json";
 import foto3 from "@/assets/foto3.jpg.asset.json";
+import foto4 from "@/assets/foto4.jpg.asset.json";
+import foto5 from "@/assets/foto5.jpg.asset.json";
 import foto6 from "@/assets/foto6.jpg.asset.json";
 
 const WHATSAPP_URL = "https://wa.me/5548991677275";
@@ -64,6 +65,57 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+// Custom inline icons
+function BarefootIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M8.5 18c-1.5 0-2.5-1.2-2.5-2.8 0-1.4.7-2.5 1.3-3.5.7-1.1 1.2-2.1 1.2-3.7C8.5 5.6 9.8 4 11.5 4S14.5 5.6 14.5 8c0 1.6.5 2.6 1.2 3.7.6 1 1.3 2.1 1.3 3.5 0 1.6-1 2.8-2.5 2.8-1 0-1.5-.5-2.5-.5s-1.5.5-2.5.5z" />
+      <circle cx="8" cy="3.5" r="0.7" />
+      <circle cx="10" cy="2.5" r="0.7" />
+      <circle cx="12.5" cy="2.2" r="0.7" />
+      <circle cx="15" cy="2.5" r="0.7" />
+      <circle cx="17" cy="3.5" r="0.7" />
+    </svg>
+  );
+}
+
+function MassageChairIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      {/* face cradle */}
+      <ellipse cx="17" cy="4.5" rx="2.2" ry="1.2" />
+      <line x1="17" y1="5.7" x2="17" y2="7.5" />
+      {/* chest pad */}
+      <rect x="11.5" y="7.5" width="6" height="4.5" rx="1" />
+      {/* arm rest */}
+      <rect x="5" y="11" width="6.5" height="2" rx="1" />
+      {/* knee pad */}
+      <rect x="9" y="15.5" width="7" height="2.2" rx="1" />
+      {/* frame legs */}
+      <line x1="13" y1="12" x2="9.5" y2="20" />
+      <line x1="15.5" y1="12" x2="18" y2="20" />
+      <line x1="9.5" y1="20" x2="5.5" y2="20" />
+      <line x1="18" y1="20" x2="20.5" y2="20" />
+    </svg>
+  );
+}
+
 const tecnicas = [
   {
     icon: Hand,
@@ -88,7 +140,7 @@ const tecnicas = [
     ],
   },
   {
-    icon: Footprints,
+    icon: BarefootIcon,
     nome: "Reflexologia Podal",
     descricao:
       "Técnica que estimula pontos específicos dos pés relacionados a diferentes órgãos e sistemas do corpo, favorecendo o equilíbrio geral.",
@@ -110,7 +162,7 @@ const tecnicas = [
     ],
   },
   {
-    icon: Armchair,
+    icon: MassageChairIcon,
     nome: "Quick Massage",
     descricao:
       "Massagem rápida realizada em cadeira ergonômica, focada principalmente nas regiões das costas, ombros, pescoço e braços.",
@@ -128,6 +180,13 @@ const navLinks = [
   { href: "#galeria", label: "Galeria" },
   { href: "#contato", label: "Contato" },
 ];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 32 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+};
 
 function HomePage() {
   return (
@@ -148,16 +207,20 @@ function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-bg/85 border-b border-accent-blue/15">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-24 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="Renato Alves Massoterapeuta" className="h-12 w-auto" />
+          <img
+            src={logoAsset.url}
+            alt="Renato Alves Massoterapeuta"
+            className="h-20 w-auto"
+          />
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-ink/80 hover:text-accent-plum transition-colors"
+              className="text-ink/80 hover:text-[#334b5c] transition-colors duration-500"
             >
               {l.label}
             </a>
@@ -167,16 +230,13 @@ function Header() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-sm uppercase tracking-wider border border-accent-blue text-accent-blue hover:bg-accent-blue hover:text-bg transition-colors rounded-full"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-sm uppercase tracking-wider border border-accent-blue text-accent-blue hover:bg-accent-blue hover:text-bg transition-colors duration-700 rounded-full"
         >
           WhatsApp
         </a>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <button
-              aria-label="Menu"
-              className="md:hidden p-2 text-ink"
-            >
+            <button aria-label="Menu" className="md:hidden p-2 text-ink">
               <Menu className="h-6 w-6" />
             </button>
           </SheetTrigger>
@@ -187,7 +247,7 @@ function Header() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-ink hover:text-accent-plum"
+                  className="text-ink hover:text-[#334b5c] transition-colors duration-500"
                 >
                   {l.label}
                 </a>
@@ -196,7 +256,7 @@ function Header() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 border border-accent-blue text-accent-blue rounded-full"
+                className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 border border-accent-blue text-accent-blue rounded-full transition-colors duration-700 hover:bg-accent-blue hover:text-bg"
               >
                 WhatsApp
               </a>
@@ -222,7 +282,7 @@ function Hero() {
   return (
     <section id="sobre" className="relative pt-16 pb-24 md:pt-24 md:pb-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div className="order-2 md:order-1">
+        <motion.div {...fadeUp} className="order-2 md:order-1">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-blue mb-5">
             Massoterapia · Estética · Terapias Integrativas
           </p>
@@ -242,19 +302,19 @@ function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors rounded-full"
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors duration-700 rounded-full"
             >
               <Phone className="h-4 w-4" /> Agendar pelo WhatsApp
             </a>
             <a
               href="#tecnicas"
-              className="inline-flex items-center gap-2 px-7 py-3 text-sm uppercase tracking-wider border border-ink/30 text-ink hover:border-accent-plum hover:text-accent-plum transition-colors rounded-full"
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm uppercase tracking-wider border border-ink/30 text-ink hover:border-accent-plum hover:text-accent-plum transition-colors duration-500 rounded-full"
             >
               Ver técnicas
             </a>
           </div>
-        </div>
-        <div className="order-1 md:order-2 relative">
+        </motion.div>
+        <motion.div {...fadeUp} className="order-1 md:order-2 relative">
           <div className="absolute -inset-4 border border-accent-blue/40 rounded-sm -rotate-1" />
           <div className="absolute -inset-2 border border-accent-plum/40 rounded-sm rotate-1" />
           <img
@@ -262,7 +322,7 @@ function Hero() {
             alt="Renato Alves realizando atendimento de massoterapia"
             className="relative w-full aspect-[4/5] object-cover rounded-sm shadow-md"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -272,13 +332,13 @@ function Tecnicas() {
   return (
     <section id="tecnicas" className="py-20 md:py-28 bg-bg-soft/50">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="text-center mb-16">
+        <motion.div {...fadeUp} className="text-center mb-16">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-blue mb-4">
             O que ofereço
           </p>
           <h2 className="text-3xl md:text-5xl text-accent-plum">Técnicas</h2>
           <SectionDivider />
-        </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {tecnicas.map((t, i) => {
@@ -286,8 +346,12 @@ function Tecnicas() {
             const accent = i % 2 === 0 ? "text-accent-blue" : "text-accent-plum";
             const border = i % 2 === 0 ? "border-accent-blue/30" : "border-accent-plum/30";
             return (
-              <article
+              <motion.article
                 key={t.nome}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`group bg-bg border ${border} rounded-sm p-7 flex flex-col hover:shadow-md transition-shadow`}
               >
                 <Icon className={`h-9 w-9 ${accent} mb-5`} strokeWidth={1.25} />
@@ -306,19 +370,22 @@ function Tecnicas() {
                     </li>
                   ))}
                 </ul>
-              </article>
+              </motion.article>
             );
           })}
         </div>
 
-        <div className="mt-14 md:mt-16 max-w-3xl mx-auto text-center border-t border-b border-accent-blue/30 py-8">
+        <motion.div
+          {...fadeUp}
+          className="mt-14 md:mt-16 max-w-3xl mx-auto text-center border-t border-b border-accent-blue/30 py-8"
+        >
           <p className="text-base md:text-lg leading-relaxed text-ink italic">
             Cada atendimento é realizado de forma individualizada, considerando as necessidades,
             queixas, sintomas e possíveis contraindicações de cada interagente. A partir dessa
             avaliação, são aplicadas as técnicas mais adequadas para proporcionar bem-estar, alívio
             de tensões e melhores resultados terapêuticos.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -329,48 +396,64 @@ function Galeria() {
     { src: foto1.url, alt: "Massagem terapêutica nas costas" },
     { src: foto2.url, alt: "Atendimento com ventosaterapia" },
     { src: foto3.url, alt: "Quick massage em cadeira ergonômica" },
+    { src: foto4.url, alt: "Atendimento de massoterapia" },
+    { src: foto5.url, alt: "Atendimento de massoterapia em sala" },
     { src: foto6.url, alt: "Reflexologia podal" },
   ];
+
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const open = openIdx !== null;
 
   return (
     <section id="galeria" className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="text-center mb-14">
+        <motion.div {...fadeUp} className="text-center mb-14">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-blue mb-4">
             Registros do atendimento
           </p>
           <h2 className="text-3xl md:text-5xl text-accent-plum">Galeria</h2>
           <SectionDivider />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
           {fotos.map((f, i) => (
-            <figure
+            <motion.button
+              type="button"
               key={i}
-              className={`relative aspect-square overflow-hidden rounded-sm border ${
+              onClick={() => setOpenIdx(i)}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, delay: (i % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className={`relative aspect-square overflow-hidden rounded-sm border cursor-pointer group ${
                 i % 2 === 0 ? "border-accent-blue/40" : "border-accent-plum/40"
               }`}
+              aria-label={`Abrir ${f.alt}`}
             >
               <img
                 src={f.src}
                 alt={f.alt}
                 loading="lazy"
-                className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-700"
               />
-            </figure>
-          ))}
-          {[0, 1].map((i) => (
-            <figure
-              key={`placeholder-${i}`}
-              className={`aspect-square rounded-sm border-2 border-dashed flex flex-col items-center justify-center gap-2 bg-bg-soft/40 ${
-                i === 0 ? "border-accent-blue/40 text-accent-blue" : "border-accent-plum/40 text-accent-plum"
-              }`}
-            >
-              <ImageIcon className="h-8 w-8" strokeWidth={1.25} />
-              <figcaption className="text-xs uppercase tracking-wider">Em breve</figcaption>
-            </figure>
+            </motion.button>
           ))}
         </div>
+
+        <Dialog open={open} onOpenChange={(o) => !o && setOpenIdx(null)}>
+          <DialogContent className="max-w-5xl w-[95vw] p-2 sm:p-3 bg-bg border-accent-blue/30">
+            <DialogTitle className="sr-only">
+              {openIdx !== null ? fotos[openIdx].alt : "Foto"}
+            </DialogTitle>
+            {openIdx !== null && (
+              <img
+                src={fotos[openIdx].src}
+                alt={fotos[openIdx].alt}
+                className="w-full h-auto max-h-[85vh] object-contain rounded-sm"
+              />
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
@@ -380,15 +463,15 @@ function Contato() {
   return (
     <section id="contato" className="py-20 md:py-28 bg-bg-soft/50">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <div className="text-center mb-14">
+        <motion.div {...fadeUp} className="text-center mb-14">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-blue mb-4">
             Vamos conversar
           </p>
           <h2 className="text-3xl md:text-5xl text-accent-plum">Contato</h2>
           <SectionDivider />
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 md:gap-6 text-center">
+        <motion.div {...fadeUp} className="grid md:grid-cols-3 gap-8 md:gap-6 text-center">
           <div className="flex flex-col items-center gap-3">
             <div className="h-12 w-12 flex items-center justify-center rounded-full border border-accent-blue/40 text-accent-blue">
               <MapPin className="h-5 w-5" strokeWidth={1.5} />
@@ -408,7 +491,7 @@ function Contato() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-ink hover:text-accent-plum transition-colors"
+              className="text-sm text-ink hover:text-accent-plum transition-colors duration-500"
             >
               (48) 99167-7275
             </a>
@@ -423,23 +506,23 @@ function Contato() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-ink hover:text-accent-blue transition-colors"
+              className="text-sm text-ink hover:text-accent-blue transition-colors duration-500"
             >
               @renatoalvesmassoterapeuta
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-14 text-center">
+        <motion.div {...fadeUp} className="mt-14 text-center">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-9 py-4 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors rounded-full"
+            className="inline-flex items-center gap-3 px-9 py-4 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors duration-700 rounded-full"
           >
             <Phone className="h-4 w-4" /> Conversar no WhatsApp
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
