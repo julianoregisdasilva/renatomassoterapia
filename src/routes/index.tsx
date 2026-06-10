@@ -471,8 +471,14 @@ function Contato() {
           <SectionDivider />
         </motion.div>
 
-        <motion.div {...fadeUp} className="grid md:grid-cols-3 gap-8 md:gap-6 text-center">
-          <div className="flex flex-col items-center gap-3">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center gap-3"
+          >
             <div className="h-12 w-12 flex items-center justify-center rounded-full border border-accent-blue/40 text-accent-blue">
               <MapPin className="h-5 w-5" strokeWidth={1.5} />
             </div>
@@ -480,12 +486,24 @@ function Contato() {
             <p className="text-sm text-ink/90 leading-relaxed">
               Bairro Santa Mônica,<br />Centro e em domicílio
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center gap-3">
-            <div className="h-12 w-12 flex items-center justify-center rounded-full border border-accent-plum/40 text-accent-plum">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center gap-3"
+          >
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Conversar no WhatsApp"
+              className="h-12 w-12 flex items-center justify-center rounded-full border border-accent-plum/40 text-accent-plum hover:bg-accent-plum hover:text-bg transition-colors duration-700"
+            >
               <Phone className="h-5 w-5" strokeWidth={1.5} />
-            </div>
+            </a>
             <h3 className="text-xl text-accent-plum">WhatsApp</h3>
             <a
               href={WHATSAPP_URL}
@@ -495,12 +513,24 @@ function Contato() {
             >
               (48) 99167-7275
             </a>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col items-center gap-3">
-            <div className="h-12 w-12 flex items-center justify-center rounded-full border border-accent-blue/40 text-accent-blue">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center gap-3"
+          >
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir Instagram"
+              className="h-12 w-12 flex items-center justify-center rounded-full border border-accent-blue/40 text-accent-blue hover:bg-accent-blue hover:text-bg transition-colors duration-700"
+            >
               <Instagram className="h-5 w-5" strokeWidth={1.5} />
-            </div>
+            </a>
             <h3 className="text-xl text-accent-blue">Instagram</h3>
             <a
               href={INSTAGRAM_URL}
@@ -510,19 +540,8 @@ function Contato() {
             >
               @renatoalvesmassoterapeuta
             </a>
-          </div>
-        </motion.div>
-
-        <motion.div {...fadeUp} className="mt-14 text-center">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-9 py-4 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors duration-700 rounded-full"
-          >
-            <Phone className="h-4 w-4" /> Conversar no WhatsApp
-          </a>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
