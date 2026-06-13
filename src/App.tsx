@@ -13,12 +13,12 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 import logoAsset from "/logo.png";
-import foto1 from "./assets/foto1.jpeg";
-import foto2 from "./assets/foto2.jpeg";
-import foto3 from "./assets/foto3.jpeg";
-import foto4 from "./assets/foto4.jpeg";
-import foto5 from "./assets/foto5.jpeg";
-import foto6 from "./assets/foto6.jpeg";
+import foto1 from "./assets/foto1.jpg";
+import foto2 from "./assets/foto2.jpg";
+import foto3 from "./assets/foto3.jpg";
+import foto4 from "./assets/foto4.jpg";
+import foto5 from "./assets/foto5.jpg";
+import foto6 from "./assets/foto6.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5548991677275";
 const INSTAGRAM_URL = "https://www.instagram.com/renatoalvesmassoterapeuta/";
