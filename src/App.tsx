@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "motion/react";
 import {
@@ -25,45 +24,6 @@ const WHATSAPP_URL = "https://wa.me/5548991677275";
 const INSTAGRAM_URL = "https://www.instagram.com/renatoalvesmassoterapeuta/";
 const DESCRIPTION =
   "Massoterapeuta em Florianópolis com mais de 20 anos de experiência. Massagem terapêutica, desportiva, reflexologia podal, drenagem linfática e quick massage.";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Renato Alves — Massoterapeuta em Florianópolis" },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Renato Alves — Massoterapeuta em Florianópolis" },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:image", content: foto1.url },
-      { name: "twitter:image", content: foto1.url },
-    ],
-    links: [
-      { rel: "icon", type: "image/png", href: logoAsset.url },
-      { rel: "canonical", href: "/" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HealthAndBeautyBusiness",
-          name: "Renato Alves — Massoterapeuta",
-          description: DESCRIPTION,
-          image: foto1.url,
-          telephone: "+5548991677275",
-          areaServed: "Florianópolis, SC",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Florianópolis",
-            addressRegion: "SC",
-            addressCountry: "BR",
-          },
-          sameAs: [INSTAGRAM_URL],
-        }),
-      },
-    ],
-  }),
-  component: HomePage,
-});
 
 // Custom inline icons
 function BarefootIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -98,16 +58,11 @@ function MassageChairIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinejoin="round"
       {...props}
     >
-      {/* face cradle */}
       <ellipse cx="17" cy="4.5" rx="2.2" ry="1.2" />
       <line x1="17" y1="5.7" x2="17" y2="7.5" />
-      {/* chest pad */}
       <rect x="11.5" y="7.5" width="6" height="4.5" rx="1" />
-      {/* arm rest */}
       <rect x="5" y="11" width="6.5" height="2" rx="1" />
-      {/* knee pad */}
       <rect x="9" y="15.5" width="7" height="2.2" rx="1" />
-      {/* frame legs */}
       <line x1="13" y1="12" x2="9.5" y2="20" />
       <line x1="15.5" y1="12" x2="18" y2="20" />
       <line x1="9.5" y1="20" x2="5.5" y2="20" />
@@ -188,7 +143,7 @@ const fadeUp = {
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
 };
 
-function HomePage() {
+export default function App() {
   return (
     <div className="min-h-screen bg-bg text-ink">
       <Header />
