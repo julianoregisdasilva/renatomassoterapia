@@ -165,7 +165,7 @@ function Header() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-24 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Renato Alves Massoterapeuta"
             className="h-20 w-auto"
           />
@@ -273,7 +273,7 @@ function Hero() {
           <div className="absolute -inset-4 border border-accent-blue/40 rounded-sm -rotate-1" />
           <div className="absolute -inset-2 border border-accent-plum/40 rounded-sm rotate-1" />
           <img
-            src={foto1.url}
+            src={foto1}
             alt="Renato Alves realizando atendimento de massoterapia"
             className="relative w-full aspect-[4/5] object-cover rounded-sm shadow-md"
           />
@@ -348,12 +348,12 @@ function Tecnicas() {
 
 function Galeria() {
   const fotos = [
-    { src: foto1.url, alt: "Massagem terapêutica nas costas" },
-    { src: foto2.url, alt: "Atendimento com ventosaterapia" },
-    { src: foto3.url, alt: "Quick massage em cadeira ergonômica" },
-    { src: foto4.url, alt: "Atendimento de massoterapia" },
-    { src: foto5.url, alt: "Atendimento de massoterapia em sala" },
-    { src: foto6.url, alt: "Reflexologia podal" },
+    { src: foto1, alt: "Massagem terapêutica nas costas" },
+    { src: foto2, alt: "Atendimento com ventosaterapia" },
+    { src: foto3, alt: "Quick massage em cadeira ergonômica" },
+    { src: foto4, alt: "Atendimento de massoterapia" },
+    { src: foto5, alt: "Atendimento de massoterapia em sala" },
+    { src: foto6, alt: "Reflexologia podal" },
   ];
 
   const [openIdx, setOpenIdx] = useState<number | null>(null);
