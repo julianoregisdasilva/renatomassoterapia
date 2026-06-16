@@ -25,28 +25,27 @@ const DESCRIPTION =
 // Custom inline icons
 function ico1(props) {
   return (
-    //<img src="/ico1.png" width="60px" height="60px"></img>
     <img src="/ico1.png" {...props} />
   );
 }
-function ico2() {
+function ico2(props) {
   return (
-    <img src="/ico2.png" width="60px" height="60px"></img>
+    <img src="/ico2.png" {...props} />
   );
 }
-function ico3() {
+function ico3(props) {
   return (
-    <img src="/ico3.png" width="60px" height="60px"></img>
+    <img src="/ico3.png" {...props} />
   );
 }
-function ico4() {
+function ico4(props) {
   return (
-    <img src="/ico4.png" width="60px" height="60px"></img>
+    <img src="/ico4.png" {...props} />
   );
 }
-function ico5() {
+function ico5(props) {
   return (
-    <img src="/ico5.png" width="60px" height="60px"></img>
+    <img src="/ico5.png" {...props} />
   );
 }
 
@@ -288,7 +287,7 @@ function Tecnicas() {
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`group bg-bg border ${border} rounded-sm p-7 flex flex-col hover:shadow-md transition-shadow`}
               >
-                <Icon className={`h-9 w-9 ${accent} mb-5 self-center`} strokeWidth={1.25} />
+                <Icon className={`h-12 w-12 ${accent} mb-5 self-center`} strokeWidth={1.25} />
                 <h3 className={`text-2xl mb-3 ${accent}`}>{t.nome}</h3>
                 <p className="text-ink/90 leading-relaxed text-sm mb-5">{t.descricao}</p>
                 <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Objetivos</p>
