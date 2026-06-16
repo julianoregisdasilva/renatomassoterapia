@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import {
-  Hand,
-  Activity,
-  Droplets,
   MapPin,
   Phone,
   Instagram,
@@ -26,39 +23,36 @@ const DESCRIPTION =
   "Massoterapeuta em Florianópolis com mais de 20 anos de experiência. Massagem terapêutica, desportiva, reflexologia podal, drenagem linfática e quick massage.";
 
 // Custom inline icons
-function BarefootIcon() {
+function ico1() {
   return (
     <img src="/ico1.png" width="60px" height="60px"></img>
   );
 }
-
-function MassageChairIcon(props: React.SVGProps<SVGSVGElement>) {
+function ico2() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.25"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <ellipse cx="17" cy="4.5" rx="2.2" ry="1.2" />
-      <line x1="17" y1="5.7" x2="17" y2="7.5" />
-      <rect x="11.5" y="7.5" width="6" height="4.5" rx="1" />
-      <rect x="5" y="11" width="6.5" height="2" rx="1" />
-      <rect x="9" y="15.5" width="7" height="2.2" rx="1" />
-      <line x1="13" y1="12" x2="9.5" y2="20" />
-      <line x1="15.5" y1="12" x2="18" y2="20" />
-      <line x1="9.5" y1="20" x2="5.5" y2="20" />
-      <line x1="18" y1="20" x2="20.5" y2="20" />
-    </svg>
+    <img src="/ico2.png" width="60px" height="60px"></img>
+  );
+}
+function ico3() {
+  return (
+    <img src="/ico3.png" width="60px" height="60px"></img>
+  );
+}
+function ico4() {
+  return (
+    <img src="/ico4.png" width="60px" height="60px"></img>
+  );
+}
+function ico5() {
+  return (
+    <img src="/ico5.png" width="60px" height="60px"></img>
   );
 }
 
+
 const tecnicas = [
   {
-    icon: Hand,
+    icon: ico1,
     nome: "Massagem Terapêutica",
     descricao:
       "Técnica manual que auxilia no alívio de dores musculares, tensões e desconfortos físicos, promovendo bem-estar e equilíbrio corporal.",
@@ -69,7 +63,7 @@ const tecnicas = [
     ],
   },
   {
-    icon: Activity,
+    icon: ico2,
     nome: "Massagem Desportiva",
     descricao:
       "Massagem voltada para praticantes de atividades físicas, auxiliando na preparação, recuperação e prevenção de lesões.",
@@ -80,7 +74,7 @@ const tecnicas = [
     ],
   },
   {
-    icon: BarefootIcon,
+    icon: ico3,
     nome: "Reflexologia Podal",
     descricao:
       "Técnica que estimula pontos específicos dos pés relacionados a diferentes órgãos e sistemas do corpo, favorecendo o equilíbrio geral.",
@@ -91,7 +85,7 @@ const tecnicas = [
     ],
   },
   {
-    icon: Droplets,
+    icon: ico4,
     nome: "Drenagem Linfática Manual",
     descricao:
       "Técnica suave que estimula o sistema linfático, favorecendo a eliminação de líquidos e toxinas acumuladas no organismo.",
@@ -102,7 +96,7 @@ const tecnicas = [
     ],
   },
   {
-    icon: MassageChairIcon,
+    icon: ico5,
     nome: "Quick Massage",
     descricao:
       "Massagem rápida realizada em cadeira ergonômica, focada principalmente nas regiões das costas, ombros, pescoço e braços.",
