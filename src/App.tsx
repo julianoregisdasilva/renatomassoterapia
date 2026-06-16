@@ -25,28 +25,27 @@ const DESCRIPTION =
 // Custom inline icons
 function ico1() {
   return (
-    
-    <img src="/ico1.png" >
+    <img src="/ico1.png" width="60px" height="60px"></img>
   );
 }
 function ico2() {
   return (
-    <img src="/ico2.png" width="60px" height="60px">
+    <img src="/ico2.png" width="60px" height="60px"></img>
   );
 }
 function ico3() {
   return (
-    <img src="/ico3.png" width="60px" height="60px">
+    <img src="/ico3.png" width="60px" height="60px"></img>
   );
 }
 function ico4() {
   return (
-    <img src="/ico4.png" width="60px" height="60px">
+    <img src="/ico4.png" width="60px" height="60px"></img>
   );
 }
 function ico5() {
   return (
-    <img src="/ico5.png" width="60px" height="60px">
+    <img src="/ico5.png" width="60px" height="60px"></img>
   );
 }
 
