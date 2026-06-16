@@ -49,7 +49,6 @@ function ico5() {
   );
 }
 
-
 const tecnicas = [
   {
     icon: ico1,
@@ -288,7 +287,7 @@ function Tecnicas() {
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`group bg-bg border ${border} rounded-sm p-7 flex flex-col hover:shadow-md transition-shadow`}
               >
-                <Icon className={`h-9 w-9 ${accent} mb-5`} strokeWidth={1.25} />
+                <Icon className={`h-9 w-9 ${accent} mb-5 self-center`} strokeWidth={1.25} />
                 <h3 className={`text-2xl mb-3 ${accent}`}>{t.nome}</h3>
                 <p className="text-ink/90 leading-relaxed text-sm mb-5">{t.descricao}</p>
                 <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Objetivos</p>
