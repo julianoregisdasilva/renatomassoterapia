@@ -23,10 +23,10 @@ const DESCRIPTION =
   "Massoterapeuta em Florianópolis com mais de 20 anos de experiência. Massagem terapêutica, desportiva, reflexologia podal, drenagem linfática e quick massage.";
 
 // Custom inline icons
-function ico1(props) {
+function ico1() {
   return (
     
-    <img src="/ico1.png" {...props} >
+    <img src="/ico1.png" >
   );
 }
 function ico2() {
