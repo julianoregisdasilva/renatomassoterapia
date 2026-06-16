@@ -26,7 +26,7 @@ const DESCRIPTION =
 function ico1() {
   return (
     
-    return <img src="/ico1.png" {...props} />;
+    <img src="/ico1.png" {...props} />;
   );
 }
 function ico2() {
