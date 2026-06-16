@@ -29,20 +29,15 @@ const DESCRIPTION =
 function BarefootIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.25"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      width="60.000000pt"
+      height="60.000000pt"
+      viewBox="0 0 60.000000 60.000000"
+      preserveAspectRatio="xMidYMid meet"
       {...props}
     >
-      <path d="M8.5 18c-1.5 0-2.5-1.2-2.5-2.8 0-1.4.7-2.5 1.3-3.5.7-1.1 1.2-2.1 1.2-3.7C8.5 5.6 9.8 4 11.5 4S14.5 5.6 14.5 8c0 1.6.5 2.6 1.2 3.7.6 1 1.3 2.1 1.3 3.5 0 1.6-1 2.8-2.5 2.8-1 0-1.5-.5-2.5-.5s-1.5.5-2.5.5z" />
-      <circle cx="8" cy="3.5" r="0.7" />
-      <circle cx="10" cy="2.5" r="0.7" />
-      <circle cx="12.5" cy="2.2" r="0.7" />
-      <circle cx="15" cy="2.5" r="0.7" />
-      <circle cx="17" cy="3.5" r="0.7" />
+      <g transform="translate(0.000000,60.000000) scale(0.100000,-0.100000)"
+        fill="#000000" stroke="none">
+      </g>
     </svg>
   );
 }
