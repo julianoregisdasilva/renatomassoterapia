@@ -25,7 +25,8 @@ const DESCRIPTION =
 // Custom inline icons
 function ico1() {
   return (
-    <img src="/ico1.png" width="60px" height="60px"></img>
+    
+    return <img src="/ico1.png" {...props} />;
   );
 }
 function ico2() {
