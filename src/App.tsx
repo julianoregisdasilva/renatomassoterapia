@@ -28,7 +28,7 @@ const DESCRIPTION =
 // Custom inline icons
 function BarefootIcon() {
   return (
-    <img src="/ico1.png"></img>
+    <img src="/ico1.png" width="60px" height="60px"></img>
   );
 }
 
