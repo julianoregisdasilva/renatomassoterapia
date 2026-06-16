@@ -26,19 +26,9 @@ const DESCRIPTION =
   "Massoterapeuta em Florianópolis com mais de 20 anos de experiência. Massagem terapêutica, desportiva, reflexologia podal, drenagem linfática e quick massage.";
 
 // Custom inline icons
-function BarefootIcon(props: React.SVGProps<SVGSVGElement>) {
+function BarefootIcon() {
   return (
-    <svg
-      width="60.000000pt"
-      height="60.000000pt"
-      viewBox="0 0 60.000000 60.000000"
-      preserveAspectRatio="xMidYMid meet"
-      {...props}
-    >
-      <g transform="translate(0.000000,60.000000) scale(0.100000,-0.100000)"
-        fill="#000000" stroke="none">
-      </g>
-    </svg>
+    <img src="/ico1.png"
   );
 }
 
