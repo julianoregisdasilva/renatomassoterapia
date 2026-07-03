@@ -107,9 +107,106 @@ const tecnicas = [
   },
 ];
 
+const cursos = [
+  {
+    nome: "Ventosaterapia Aplicada à Estética e Terapêutica",
+    carga: "4 a 8 horas (depende do número de alunos)",
+    publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
+    teorico: [
+      "Ação terapêutica da ventosaterapia aplicada à estética e terapêutica",
+      "Conceito de fibro edema gelóide (celulite)",
+      "Classificação da celulite quanto ao grau e tipo",
+      "Avaliação na estética",
+    ],
+    pratico: [
+      "Prática de massagem modeladora",
+      "Perimetria na estética",
+      "Aplicação de ventosas para tratamento estético",
+      "Liberação miofascial superficial no dorso e membros inferiores",
+      "Técnica básica de liberação do trigger point com a ventosa",
+      "Protocolos terapêuticos de ventosaterapia para: cervicalgia, lombalgia, dorsalgia, borda medial da escápula, reequilíbrio energético, músculos anteriores e posteriores de coxa, panturrilha, ombro, bíceps e tríceps, flexores da mão e do punho (antebraço)",
+    ],
+  },
+  {
+    nome: "Massagem Relaxante (Semipresencial)",
+    carga: "4 a 8 horas (depende do número de alunos)",
+    publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
+    teorico: [
+      "Conteúdo teórico em vídeo",
+      "Efeitos fisiológicos sistêmicos e locais atribuídos à massagem",
+      "Contraindicações absolutas e parciais para a aplicação da massagem",
+      "Anamnese básica para a massagem relaxante",
+      "Manobras básicas da massagem clássica",
+    ],
+    pratico: [
+      "Posicionamento do paciente, ambientação e preparação prévia (álcool, lençol, creme)",
+      "Técnica básica respiratória para centramento do terapeuta antes da massagem",
+      "Demonstração e prática das manobras básicas de massagem",
+      "Anamnese básica prévia ao protocolo completo de massagem relaxante",
+    ],
+  },
+  {
+    nome: "Massagem Terapêutica",
+    carga: "6 a 8 horas (depende do número de alunos)",
+    publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
+    teorico: [
+      "Efeitos fisiológicos sistêmicos e locais atribuídos à massagem",
+      "Contraindicações absolutas e parciais e técnica respiratória de centramento do terapeuta",
+      "Anamnese básica para a massagem terapêutica",
+      "Manobras básicas da massagem e técnicas terapêuticas",
+      "Fisiopatologia básica das disfunções: lombalgia, cervicalgia, dorsalgia, cervicobraquialgia, síndrome do piriforme, dor de cabeça tensional, prisão de ventre e algias em membros superiores e inferiores",
+    ],
+    pratico: [
+      "Posicionamento do paciente, ambientação e preparação prévia da sessão",
+      "Demonstração e prática das manobras básicas e técnicas terapêuticas",
+      "Demonstração dos protocolos das principais disfunções abordadas na teoria",
+    ],
+  },
+  {
+    nome: "Reflexologia Podal",
+    carga: "8 horas",
+    publico:
+      "Massoterapeutas, fisioterapeutas, naturólogos, esteticistas, enfermeiros, farmacêuticos e educadores físicos",
+    teorico: [
+      "Conceito de reflexologia podal",
+      "Efeitos fisiológicos",
+      "Evidências científicas",
+      "Indicações e contraindicações",
+      "Mapa reflexológico podal",
+    ],
+    pratico: [
+      "Preparação dos pés, escalda-pés e esfoliação",
+      "Identificação e palpação de todas as áreas reflexas",
+      "Protocolo básico de relaxamento podal",
+      "Identificação de disfunções orgânicas com base nos sintomas apresentados nos pés",
+      "Protocolos terapêuticos: lombalgia, cervicalgia, dorsalgia, ciatalgia, dor de cabeça tensional, dor de estômago, ansiedade, depressão, prisão de ventre e síndrome do intestino irritável",
+      "Anamnese e prática entre os alunos",
+    ],
+  },
+  {
+    nome: "Massagem Desportiva",
+    carga: "6 a 8 horas",
+    publico:
+      "Massoterapeutas, fisioterapeutas, naturólogos, esteticistas, enfermeiros, farmacêuticos e educadores físicos",
+    teorico: [
+      "Fundamentos da massagem desportiva",
+      "Massagem pré-evento, pós-evento e intercompetição",
+      "Anamnese na massagem desportiva",
+      "A massagem desportiva em diversos esportes",
+    ],
+    pratico: [
+      "Prática de massagem pré-evento, adequando técnicas, pressão e profundidade para melhorar o desempenho",
+      "Prática de massagem intercompetição para controle da dor e alívio de contraturas",
+      "Prática de massagem pós-evento para relaxamento geral e mobilidade articular",
+      "Anamnese e cuidados especiais com o atleta",
+    ],
+  },
+];
+
 const navLinks = [
   { href: "#sobre", label: "Sobre" },
   { href: "#tecnicas", label: "Técnicas" },
+  { href: "#cursos", label: "Cursos" },
   { href: "#galeria", label: "Galeria" },
   { href: "#contato", label: "Contato" },
 ];
