@@ -215,7 +215,9 @@ export default function App() {
       <main>
         <Hero />
         <Tecnicas />
+        <Cursos />
         <Galeria />
+
         <Contato />
       </main>
       <Footer />
