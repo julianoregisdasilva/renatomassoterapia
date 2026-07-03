@@ -413,7 +413,86 @@ function Tecnicas() {
   );
 }
 
+function Cursos() {
+  return (
+    <section id="cursos" className="py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <motion.div {...fadeUp} className="text-center mb-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-blue mb-4">
+            Formação e aperfeiçoamento
+          </p>
+          <h2 className="text-3xl md:text-5xl text-accent-plum">Cursos Livres</h2>
+          <SectionDivider />
+          <p className="max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-ink/90 mt-4">
+            Cursos livres ministrados por Renato Alves, voltados a profissionais e estudantes das
+            áreas de saúde, estética e terapias integrativas. Cada formação alia fundamentos
+            teóricos, prática supervisionada e protocolos aplicáveis ao dia a dia clínico.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          {cursos.map((c, i) => {
+            const accent = i % 2 === 0 ? "text-accent-blue" : "text-accent-plum";
+            const border = i % 2 === 0 ? "border-accent-blue/30" : "border-accent-plum/30";
+            const dot = i % 2 === 0 ? "bg-accent-blue" : "bg-accent-plum";
+            return (
+              <motion.article
+                key={c.nome}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: (i % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className={`bg-bg border ${border} rounded-sm p-7 flex flex-col`}
+              >
+                <h3 className={`text-2xl mb-3 ${accent}`}>{c.nome}</h3>
+                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm mb-5">
+                  <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Carga horária</dt>
+                  <dd className="text-ink/90">{c.carga}</dd>
+                  <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Público-alvo</dt>
+                  <dd className="text-ink/90">{c.publico}</dd>
+                </dl>
+
+                <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo teórico</p>
+                <ul className="space-y-1.5 text-sm mb-5">
+                  {c.teorico.map((o) => (
+                    <li key={o} className="flex gap-2.5 leading-relaxed">
+                      <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
+                      <span>{o}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo prático</p>
+                <ul className="space-y-1.5 text-sm">
+                  {c.pratico.map((o) => (
+                    <li key={o} className="flex gap-2.5 leading-relaxed">
+                      <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
+                      <span>{o}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <motion.div {...fadeUp} className="mt-12 text-center">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors duration-700 rounded-full"
+          >
+            <Phone className="h-4 w-4" /> Solicitar informações
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function Galeria() {
+
   const fotos = [
     { src: foto1, alt: "Massagem terapêutica nas costas" },
     { src: foto2, alt: "Atendimento com ventosaterapia" },
