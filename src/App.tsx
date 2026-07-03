@@ -16,6 +16,11 @@ import foto3 from "/foto3.jpeg";
 import foto4 from "/foto4.jpeg";
 import foto5 from "/foto5.jpeg";
 import foto6 from "/foto6.jpeg";
+import cursoVentosa from "@/assets/curso-ventosa.jpg";
+import cursoRelaxante from "@/assets/curso-relaxante.jpg";
+import cursoTerapeutica from "@/assets/curso-terapeutica.jpg";
+import cursoReflexo from "@/assets/curso-reflexo.jpg";
+import cursoDesportiva from "@/assets/curso-desportiva.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5548991677275";
 const INSTAGRAM_URL = "https://www.instagram.com/renatoalvesmassoterapeuta/";
@@ -99,6 +104,7 @@ const tecnicas = [
 
 const cursos = [
   {
+    bg: cursoVentosa,
     nome: "Ventosaterapia Aplicada à Estética e Terapêutica",
     carga: "4 a 8 horas (depende do número de alunos)",
     publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
@@ -118,6 +124,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoRelaxante,
     nome: "Massagem Relaxante (Semipresencial)",
     carga: "4 a 8 horas (depende do número de alunos)",
     publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
@@ -136,6 +143,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoTerapeutica,
     nome: "Massagem Terapêutica",
     carga: "6 a 8 horas (depende do número de alunos)",
     publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
@@ -153,6 +161,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoReflexo,
     nome: "Reflexologia Podal",
     carga: "8 horas",
     publico:
@@ -174,6 +183,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoDesportiva,
     nome: "Massagem Desportiva",
     carga: "6 a 8 horas",
     publico:
@@ -442,35 +452,44 @@ function Cursos() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.6, delay: (i % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className={`bg-bg border ${border} rounded-sm p-7 flex flex-col`}
+                className={`relative overflow-hidden bg-bg border ${border} rounded-sm p-7 flex flex-col`}
               >
-                <h3 className={`text-2xl mb-3 ${accent}`}>{c.nome}</h3>
-                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm mb-5">
-                  <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Carga horária</dt>
-                  <dd className="text-ink/90">{c.carga}</dd>
-                  <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Público-alvo</dt>
-                  <dd className="text-ink/90">{c.publico}</dd>
-                </dl>
+                <img
+                  src={c.bg}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="pointer-events-none select-none absolute -right-8 -bottom-8 w-72 h-72 object-contain opacity-[0.12] mix-blend-multiply"
+                />
+                <div className="relative">
+                  <h3 className={`text-2xl mb-3 ${accent}`}>{c.nome}</h3>
+                  <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm mb-5">
+                    <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Carga horária</dt>
+                    <dd className="text-ink/90">{c.carga}</dd>
+                    <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Público-alvo</dt>
+                    <dd className="text-ink/90">{c.publico}</dd>
+                  </dl>
 
-                <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo teórico</p>
-                <ul className="space-y-1.5 text-sm mb-5">
-                  {c.teorico.map((o) => (
-                    <li key={o} className="flex gap-2.5 leading-relaxed">
-                      <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
-                      <span>{o}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo teórico</p>
+                  <ul className="space-y-1.5 text-sm mb-5">
+                    {c.teorico.map((o) => (
+                      <li key={o} className="flex gap-2.5 leading-relaxed">
+                        <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
+                        <span>{o}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo prático</p>
-                <ul className="space-y-1.5 text-sm">
-                  {c.pratico.map((o) => (
-                    <li key={o} className="flex gap-2.5 leading-relaxed">
-                      <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
-                      <span>{o}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo prático</p>
+                  <ul className="space-y-1.5 text-sm">
+                    {c.pratico.map((o) => (
+                      <li key={o} className="flex gap-2.5 leading-relaxed">
+                        <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
+                        <span>{o}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.article>
             );
           })}
