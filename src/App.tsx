@@ -23,30 +23,20 @@ const DESCRIPTION =
   "Massoterapeuta em Florianópolis com mais de 20 anos de experiência. Massagem terapêutica, desportiva, reflexologia podal, drenagem linfática e quick massage.";
 
 // Custom inline icons
-function ico1(props) {
-  return (
-    <img src="/ico1.png" {...props} />
-  );
+function ico1(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico1.png" {...props} />;
 }
-function ico2(props) {
-  return (
-    <img src="/ico2.png" {...props} />
-  );
+function ico2(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico2.png" {...props} />;
 }
-function ico3(props) {
-  return (
-    <img src="/ico3.png" {...props} />
-  );
+function ico3(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico3.png" {...props} />;
 }
-function ico4(props) {
-  return (
-    <img src="/ico4.png" {...props} />
-  );
+function ico4(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico4.png" {...props} />;
 }
-function ico5(props) {
-  return (
-    <img src="/ico5.png" {...props} />
-  );
+function ico5(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico5.png" {...props} />;
 }
 
 const tecnicas = [
