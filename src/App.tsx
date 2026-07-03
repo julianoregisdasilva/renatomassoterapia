@@ -16,6 +16,11 @@ import foto3 from "/foto3.jpeg";
 import foto4 from "/foto4.jpeg";
 import foto5 from "/foto5.jpeg";
 import foto6 from "/foto6.jpeg";
+import cursoVentosa from "@/assets/curso-ventosa.jpg";
+import cursoRelaxante from "@/assets/curso-relaxante.jpg";
+import cursoTerapeutica from "@/assets/curso-terapeutica.jpg";
+import cursoReflexo from "@/assets/curso-reflexo.jpg";
+import cursoDesportiva from "@/assets/curso-desportiva.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5548991677275";
 const INSTAGRAM_URL = "https://www.instagram.com/renatoalvesmassoterapeuta/";
@@ -99,6 +104,7 @@ const tecnicas = [
 
 const cursos = [
   {
+    bg: cursoVentosa,
     nome: "Ventosaterapia Aplicada à Estética e Terapêutica",
     carga: "4 a 8 horas (depende do número de alunos)",
     publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
@@ -118,6 +124,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoRelaxante,
     nome: "Massagem Relaxante (Semipresencial)",
     carga: "4 a 8 horas (depende do número de alunos)",
     publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
@@ -136,6 +143,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoTerapeutica,
     nome: "Massagem Terapêutica",
     carga: "6 a 8 horas (depende do número de alunos)",
     publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
@@ -153,6 +161,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoReflexo,
     nome: "Reflexologia Podal",
     carga: "8 horas",
     publico:
@@ -174,6 +183,7 @@ const cursos = [
     ],
   },
   {
+    bg: cursoDesportiva,
     nome: "Massagem Desportiva",
     carga: "6 a 8 horas",
     publico:
