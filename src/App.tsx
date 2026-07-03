@@ -23,30 +23,20 @@ const DESCRIPTION =
   "Massoterapeuta em Florianópolis com mais de 20 anos de experiência. Massagem terapêutica, desportiva, reflexologia podal, drenagem linfática e quick massage.";
 
 // Custom inline icons
-function ico1(props) {
-  return (
-    <img src="/ico1.png" {...props} />
-  );
+function ico1(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico1.png" {...props} />;
 }
-function ico2(props) {
-  return (
-    <img src="/ico2.png" {...props} />
-  );
+function ico2(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico2.png" {...props} />;
 }
-function ico3(props) {
-  return (
-    <img src="/ico3.png" {...props} />
-  );
+function ico3(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico3.png" {...props} />;
 }
-function ico4(props) {
-  return (
-    <img src="/ico4.png" {...props} />
-  );
+function ico4(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico4.png" {...props} />;
 }
-function ico5(props) {
-  return (
-    <img src="/ico5.png" {...props} />
-  );
+function ico5(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return <img src="/ico5.png" {...props} />;
 }
 
 const tecnicas = [
@@ -107,9 +97,106 @@ const tecnicas = [
   },
 ];
 
+const cursos = [
+  {
+    nome: "Ventosaterapia Aplicada à Estética e Terapêutica",
+    carga: "4 a 8 horas (depende do número de alunos)",
+    publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
+    teorico: [
+      "Ação terapêutica da ventosaterapia aplicada à estética e terapêutica",
+      "Conceito de fibro edema gelóide (celulite)",
+      "Classificação da celulite quanto ao grau e tipo",
+      "Avaliação na estética",
+    ],
+    pratico: [
+      "Prática de massagem modeladora",
+      "Perimetria na estética",
+      "Aplicação de ventosas para tratamento estético",
+      "Liberação miofascial superficial no dorso e membros inferiores",
+      "Técnica básica de liberação do trigger point com a ventosa",
+      "Protocolos terapêuticos de ventosaterapia para: cervicalgia, lombalgia, dorsalgia, borda medial da escápula, reequilíbrio energético, músculos anteriores e posteriores de coxa, panturrilha, ombro, bíceps e tríceps, flexores da mão e do punho (antebraço)",
+    ],
+  },
+  {
+    nome: "Massagem Relaxante (Semipresencial)",
+    carga: "4 a 8 horas (depende do número de alunos)",
+    publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
+    teorico: [
+      "Conteúdo teórico em vídeo",
+      "Efeitos fisiológicos sistêmicos e locais atribuídos à massagem",
+      "Contraindicações absolutas e parciais para a aplicação da massagem",
+      "Anamnese básica para a massagem relaxante",
+      "Manobras básicas da massagem clássica",
+    ],
+    pratico: [
+      "Posicionamento do paciente, ambientação e preparação prévia (álcool, lençol, creme)",
+      "Técnica básica respiratória para centramento do terapeuta antes da massagem",
+      "Demonstração e prática das manobras básicas de massagem",
+      "Anamnese básica prévia ao protocolo completo de massagem relaxante",
+    ],
+  },
+  {
+    nome: "Massagem Terapêutica",
+    carga: "6 a 8 horas (depende do número de alunos)",
+    publico: "Massoterapeutas, fisioterapeutas, naturólogos e esteticistas",
+    teorico: [
+      "Efeitos fisiológicos sistêmicos e locais atribuídos à massagem",
+      "Contraindicações absolutas e parciais e técnica respiratória de centramento do terapeuta",
+      "Anamnese básica para a massagem terapêutica",
+      "Manobras básicas da massagem e técnicas terapêuticas",
+      "Fisiopatologia básica das disfunções: lombalgia, cervicalgia, dorsalgia, cervicobraquialgia, síndrome do piriforme, dor de cabeça tensional, prisão de ventre e algias em membros superiores e inferiores",
+    ],
+    pratico: [
+      "Posicionamento do paciente, ambientação e preparação prévia da sessão",
+      "Demonstração e prática das manobras básicas e técnicas terapêuticas",
+      "Demonstração dos protocolos das principais disfunções abordadas na teoria",
+    ],
+  },
+  {
+    nome: "Reflexologia Podal",
+    carga: "8 horas",
+    publico:
+      "Massoterapeutas, fisioterapeutas, naturólogos, esteticistas, enfermeiros, farmacêuticos e educadores físicos",
+    teorico: [
+      "Conceito de reflexologia podal",
+      "Efeitos fisiológicos",
+      "Evidências científicas",
+      "Indicações e contraindicações",
+      "Mapa reflexológico podal",
+    ],
+    pratico: [
+      "Preparação dos pés, escalda-pés e esfoliação",
+      "Identificação e palpação de todas as áreas reflexas",
+      "Protocolo básico de relaxamento podal",
+      "Identificação de disfunções orgânicas com base nos sintomas apresentados nos pés",
+      "Protocolos terapêuticos: lombalgia, cervicalgia, dorsalgia, ciatalgia, dor de cabeça tensional, dor de estômago, ansiedade, depressão, prisão de ventre e síndrome do intestino irritável",
+      "Anamnese e prática entre os alunos",
+    ],
+  },
+  {
+    nome: "Massagem Desportiva",
+    carga: "6 a 8 horas",
+    publico:
+      "Massoterapeutas, fisioterapeutas, naturólogos, esteticistas, enfermeiros, farmacêuticos e educadores físicos",
+    teorico: [
+      "Fundamentos da massagem desportiva",
+      "Massagem pré-evento, pós-evento e intercompetição",
+      "Anamnese na massagem desportiva",
+      "A massagem desportiva em diversos esportes",
+    ],
+    pratico: [
+      "Prática de massagem pré-evento, adequando técnicas, pressão e profundidade para melhorar o desempenho",
+      "Prática de massagem intercompetição para controle da dor e alívio de contraturas",
+      "Prática de massagem pós-evento para relaxamento geral e mobilidade articular",
+      "Anamnese e cuidados especiais com o atleta",
+    ],
+  },
+];
+
 const navLinks = [
   { href: "#sobre", label: "Sobre" },
   { href: "#tecnicas", label: "Técnicas" },
+  { href: "#cursos", label: "Cursos" },
   { href: "#galeria", label: "Galeria" },
   { href: "#contato", label: "Contato" },
 ];
@@ -128,7 +215,9 @@ export default function App() {
       <main>
         <Hero />
         <Tecnicas />
+        <Cursos />
         <Galeria />
+
         <Contato />
       </main>
       <Footer />
@@ -287,7 +376,7 @@ function Tecnicas() {
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`group bg-bg border ${border} rounded-sm p-7 flex flex-col hover:shadow-md transition-shadow`}
               >
-                <Icon className={`h-20 w-20 ${accent} mb-5 self-center`} strokeWidth={1.25} />
+                <Icon className={`h-20 w-20 ${accent} mb-5 self-center`} />
                 <h3 className={`text-2xl mb-3 ${accent}`}>{t.nome}</h3>
                 <p className="text-ink/90 leading-relaxed text-sm mb-5">{t.descricao}</p>
                 <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Objetivos</p>
@@ -324,7 +413,86 @@ function Tecnicas() {
   );
 }
 
+function Cursos() {
+  return (
+    <section id="cursos" className="py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <motion.div {...fadeUp} className="text-center mb-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-blue mb-4">
+            Formação e aperfeiçoamento
+          </p>
+          <h2 className="text-3xl md:text-5xl text-accent-plum">Cursos Livres</h2>
+          <SectionDivider />
+          <p className="max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-ink/90 mt-4">
+            Cursos livres ministrados por Renato Alves, voltados a profissionais e estudantes das
+            áreas de saúde, estética e terapias integrativas. Cada formação alia fundamentos
+            teóricos, prática supervisionada e protocolos aplicáveis ao dia a dia clínico.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          {cursos.map((c, i) => {
+            const accent = i % 2 === 0 ? "text-accent-blue" : "text-accent-plum";
+            const border = i % 2 === 0 ? "border-accent-blue/30" : "border-accent-plum/30";
+            const dot = i % 2 === 0 ? "bg-accent-blue" : "bg-accent-plum";
+            return (
+              <motion.article
+                key={c.nome}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: (i % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className={`bg-bg border ${border} rounded-sm p-7 flex flex-col`}
+              >
+                <h3 className={`text-2xl mb-3 ${accent}`}>{c.nome}</h3>
+                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm mb-5">
+                  <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Carga horária</dt>
+                  <dd className="text-ink/90">{c.carga}</dd>
+                  <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Público-alvo</dt>
+                  <dd className="text-ink/90">{c.publico}</dd>
+                </dl>
+
+                <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo teórico</p>
+                <ul className="space-y-1.5 text-sm mb-5">
+                  {c.teorico.map((o) => (
+                    <li key={o} className="flex gap-2.5 leading-relaxed">
+                      <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
+                      <span>{o}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-xs uppercase tracking-wider text-ink/60 mb-2">Conteúdo prático</p>
+                <ul className="space-y-1.5 text-sm">
+                  {c.pratico.map((o) => (
+                    <li key={o} className="flex gap-2.5 leading-relaxed">
+                      <span className={`mt-2 h-1 w-1 rounded-full flex-shrink-0 ${dot}`} />
+                      <span>{o}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <motion.div {...fadeUp} className="mt-12 text-center">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3 text-sm uppercase tracking-wider bg-accent-plum text-bg hover:bg-accent-blue transition-colors duration-700 rounded-full"
+          >
+            <Phone className="h-4 w-4" /> Solicitar informações
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function Galeria() {
+
   const fotos = [
     { src: foto1, alt: "Massagem terapêutica nas costas" },
     { src: foto2, alt: "Atendimento com ventosaterapia" },
