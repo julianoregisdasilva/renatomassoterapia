@@ -554,7 +554,7 @@ function Galeria() {
                 src={f.src}
                 alt={f.alt}
                 loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700"
               />
             </motion.button>
           ))}
