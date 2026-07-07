@@ -462,7 +462,7 @@ function Cursos() {
                   className="pointer-events-none select-none absolute -right-8 -bottom-8 w-72 h-72 object-contain opacity-[0.12] mix-blend-multiply"
                 />
                 <div className="relative">
-                  <h3 className={`text-2xl mb-3 ${accent} font-bold`}>{c.nome}</h3>
+                  <h3 className={`text-2xl mb-3 ${accent} font-medium`}>{c.nome}</h3>
                   <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm mb-5">
                     <dt className="uppercase tracking-wider text-ink/60 text-xs pt-0.5">Carga horária</dt>
                     <dd className="text-ink/90">{c.carga}</dd>
